@@ -1,10 +1,8 @@
-import Navabar from '../component/Navbar/Navbar'
 
 const About = () => {
   return ( 
     <>
-      <Navabar />
-      <p>Esta es la pagina de about</p>
+      <p>About Next Avocados</p>
     </>
    );
 }
