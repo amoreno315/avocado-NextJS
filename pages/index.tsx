@@ -1,9 +1,8 @@
 //crear cmponente react
 
 import { useEffect, useState } from 'react'
-import Navbar from '../component/Navbar/Navbar'
 const Home = () => {
-  const [productList, setProductList] = useState([])
+  const [productList, setProductList] = useState<TProduct[]>([])
 
   useEffect(() => {
     window
@@ -16,8 +15,7 @@ const Home = () => {
   return ( 
     
     <div>
-      <Navbar/> 
-      <h1>Hola Platzi!</h1>
+      <h1>NextJS Avocados Web</h1>
       {productList.map((product) => (
         <div>{product.name}</div>
       ))}

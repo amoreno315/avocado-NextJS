@@ -1,0 +1,123 @@
+Instalar NEXTJS 
+
+Requisitos 
+
+Node (>12,>10) 
+
+Git 
+
+Browser - Goggle Chrome - para utilizar la DevTools 
+
+Instalacion 
+
+CLI - Automatica: 
+
+yarn create next-app 
+ 
+
+Manual 
+
+mkdir platzi-nextjs 
+ 
+cd platzi-nextjs 
+ 
+npm init -y 
+ 
+yarn add next react react-dom 
+npm add next react react-dom 
+ 
+Agregar el siguiente codigo al "script" 
+ 
+"scripts": { 
+  "dev": "next", 
+  "build": "next build", 
+  "start": "next start" 
+}, 
+
+ 
+
+DATO: 
+
+Si usan VisualStudioCode y no les autocompletan las etiquetas hacer lo siguiente: 
+
+> 1er paso 
+ctrl + shif + p 
+ 
+> 2do paso - seleccionar lo siguiente: 
+change language Mode 
+ 
+> 3er paso - Escribir  
+Javascript React 
+ 
+> y listo !! les autocompletara las etiquetas. 
+
+ 
+
+RUTAS: 
+
+Rutas estaticas, como /about/ 
+
+Rutas dinamicas /user/platzi, /user/jonalvarez … /user/:id 
+
+ 
+
+NextJs hace routing basado en file system 
+
+ 
+Routing dinamico: 
+
+[].js 
+
+ 
+
+Como sabemos si es SSR: ver codigo fuente de la pagina.  
+por defecto next hace ssr  
+
+Se puede ver si en network en el respnse tenemos el codigo html 
+
+ 
+
+SSR es más amigable para los motores de busqueda 
+
+ 
+
+Si usamos <a> para la navegacion, entonces estamos haciendo navegacione n el servidor, osea estamos cargando la web  
+
+ 
+
+Prefeching automatico, cuando el usuario hace hover sobre un enlace, nextjs carga por debajo desde el servidor lo que vaya a necesitar 
+
+Extender NextJs
+  -.Document (primero renderiza el Docuemnt)
+    -.App (despues renderiza el APP)
+      -.NuestraAplicacion /pages/
+Exite el App (documento principal) 
+pero tambien exite el Document (que esta dentro del app) y dentro de este esta nuestra aplicacion
+
+Vamos a extender el Document: dentro de pages vamos a crear el archivo _document.tsx (o .js)
+ver documentacion next "custom document" y copiar el template
+
+Extender el documento de App
+Todos los cambios en app y en document requieren un reinicio del servidor
+
+configurar el path alias
+configurar el base-url 
+y el acceso a las carpetas de componentes 
+p.e.
+"paths": {
+      "@database": ["database/db.ts"],
+      "@components/*": ["components/*"]
+    }
+
+Soluciones CSS en NextJs y su flexibilidad
+3 formas/enfoques sin cambiar configuracion
+Build in CSS 
+1. Global CSS con archivos .CSS
+2. Module CSS con archivos .module.CSS
+  import styles from './layout.module.css'
+  <div className={styles.container}>
+3. CSS in JS, llamada Styled JSX (propia de NextJS-Vercel)
+  styled cmponent asigna automaticamente nombres de clases para evitar
+  colisiones
+
+Finalizando las paginas
